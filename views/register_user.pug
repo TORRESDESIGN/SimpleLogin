@@ -1,0 +1,10 @@
+h2 Register
+form(method="POST", action="/")
+	label(for="user_name")
+		input(type="text", name="user_name", placeholder="User Name", pattern="[a-z0-9]{4,9}", title="User name needs to be lower case, 4-9 letters or numbers long!" required)
+	label(for="password")
+		input(type="password", name="password", placeholder="Password", pattern="[A-Za-z0-9]{4,}", title="Password is case sensitive, and needs to be atleast 4 letters/numbers long!" required)
+	label(for="email")
+		input(type="email", name="email", placeholder="Email" required)
+	div
+		input(type="submit", value="Submit")
