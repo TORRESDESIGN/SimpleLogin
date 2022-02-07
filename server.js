@@ -5,6 +5,9 @@ const pug = require('pug');
 const newUserController = require('./controllers/newUser');
 const storeUserController = require('./controllers/storeUser');
 
+const loginController = require('./controllers/login');
+const loginUserController = require('./controllers/loginUser');
+
 const PORT = process.env.PORT || '3000';
 
 const app = express();
@@ -23,6 +26,10 @@ console.log(process.env.DB_HOST);
 //register user
 app.get('/', newUserController);
 app.post('/', storeUserController);
+
+//login user
+app.get('/user-login', loginController);
+app.post('/user-login', loginUserController);
 
 app.listen(PORT, () => {
 	console.log(`Listening to port ${PORT}`);
